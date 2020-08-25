@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Self Care{% endblock title %}
+{% load static %}
+{% block style %}
+<style>
+    header{
+      background: url({% static 'main/maddi-bazzocco-TOZqUHD8L38-unsplash.jpg' %});
+      background-size: cover;
+      background-position: center;
+      min-height: 1000px;
+    }
+    @media screen and (max-width: 670px){
+      header{
+        min-height: 500px;
+      }
+    }
+</style>
+{% endblock style %}
+
+{% block nav %}
+<header>
+    <nav class="transparent">
+        <div class="container">
+            <div class="nav-wrapper">
+            <a href="{% url 'main:Home' %}" class="brand-logo center black-text">Self Care</a>
+            </div>
+        </div>
+    </nav>
+</header>
+{% endblock nav %}
+
+{% block body %}
+<br/>
+<main>
+    <section class="container">
+        <div class="row">
+            {% for card in cards %}
+            <div class="col s6 m4 l4">
+                <div class="card-panel">
+                    <img class="responsive-img" src="{{card.pic.url}}">
+                    <p>{{card.post.title}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="col s6 m4 l4">
+                <div class="card-panel">
+                    <h4>This is a card panel</h4>
+                    <p>And this is a paragaph in the card</p>
+                </div>
+            </div>
+            <div class="col s6 m4 l4">
+                <div class="card-panel">
+                    <h4>This is a card panel</h4>
+                    <p>And this is a paragaph in the card</p>
+                </div>
+            </div>
+            <div class="col s6 m4 l4">
+                <div class="card-panel">
+                    <h4>This is a card panel</h4>
+                    <p>And this is a paragaph in the card</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock body %}

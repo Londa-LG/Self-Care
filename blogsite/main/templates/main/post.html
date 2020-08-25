@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Post{% endblock title %}
+
+{% block style %}
+<style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+</style>
+{% endblock style %}
+
+{% block nav %}
+<header>
+    <nav class="orange lighten-2">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="{% url 'main:Home' %}" class="brand-logo center">Self Care</a>
+            </div>
+        </div>
+    </nav>
+</header>
+{% endblock nav %}
+
+{% block body %}
+<main>
+    <br/>
+    <div class="row">
+        <div class="col m12 l8">
+            <div class="card-panel">
+                <h1 class="center">This is the heading</h1>
+                <p>This is the paragraph that follows after</p>
+            </div>
+        </div>
+        <div class="col m4 l4">
+            <div class="card-panel">
+                <h5>This is a side card/panel</h5>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock body %}
