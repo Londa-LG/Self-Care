@@ -6,6 +6,7 @@ def HomeView(request):
     content = {'cards': cards}
     return render(request,'main/home.html',content)
 
-def PostView(request):
-
-    return render(request,'main/post.html')
+def PostView(request,id):
+    post = BlogPost.objects.filter(id=id)
+    content = {'post': post}
+    return render(request, 'main/post.html', content)

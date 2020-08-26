@@ -5,5 +5,5 @@ app_name = 'main'
 
 urlpatterns =[
     path('', HomeView,name='Home'),
-    path('Post/', PostView, name='Post'),
+    path('Post/<int:id>/', PostView, name='Post'),
 ]

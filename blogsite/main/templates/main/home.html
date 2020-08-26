@@ -37,30 +37,19 @@
         <div class="row">
             {% for card in cards %}
             <div class="col s6 m4 l4">
-                <div class="card-panel">
-                    <img class="responsive-img" src="{{card.pic.url}}">
-                    <p>{{card.post.title}}</p>
-                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="image-class">
+                            <img class="responsive-img" src="{{ card.pic.url }}" alt="post image">
+                        </div>
+                        <span class="card-title green-text accent-4 center">{{card.post.title}}</span>
+                    </div>
+                    <div class="card-action center">
+                        <a  href="Post/{{card.post.get_absolute_url}}" >Read Post</a>
+                    </div>
+                    </div>
             </div>
             {% endfor %}
-            <div class="col s6 m4 l4">
-                <div class="card-panel">
-                    <h4>This is a card panel</h4>
-                    <p>And this is a paragaph in the card</p>
-                </div>
-            </div>
-            <div class="col s6 m4 l4">
-                <div class="card-panel">
-                    <h4>This is a card panel</h4>
-                    <p>And this is a paragaph in the card</p>
-                </div>
-            </div>
-            <div class="col s6 m4 l4">
-                <div class="card-panel">
-                    <h4>This is a card panel</h4>
-                    <p>And this is a paragaph in the card</p>
-                </div>
-            </div>
         </div>
     </section>
 </main>
