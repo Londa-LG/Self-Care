@@ -23,7 +23,17 @@
     <nav class="transparent">
         <div class="container">
             <div class="nav-wrapper">
-            <a href="{% url 'main:Home' %}" class="brand-logo center black-text">Self Care</a>
+            <a href="{% url 'main:Home' %}" class="brand-logo">Self Care</a>
+             <a href="#" class="sidenav-trigger" data-target="mobile-links"><li class="material-icons">menu</li></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">Style</a></li>
+                    <li><a href="#">Beauty</a></li>
+                </ul>
+
+                <ul class="sidenav" id="mobile-links">
+                   <li><a href="#">Style</a></li>
+                    <li><a href=#l">Beauty</a></li>
+                </ul>
             </div>
         </div>
     </nav>

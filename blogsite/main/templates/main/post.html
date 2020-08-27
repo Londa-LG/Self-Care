@@ -2,26 +2,29 @@
 
 {% block title %}Post{% endblock title %}
 
-{% block style %}
-<style>
-    body {
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1 0 auto;
-    }
-</style>
-{% endblock style %}
+{% block meta %}
+{% for info in meta %}
+<meta name="description" content="{{info.description}}">
+<meta name="keywords" content="{{info.keywords}}">
+{% endfor %}
+{% endblock meta %}
 
 {% block nav %}
 <header>
     <nav class="orange lighten-2">
         <div class="container">
             <div class="nav-wrapper">
-                <a href="{% url 'main:Home' %}" class="brand-logo center">Self Care</a>
+                <a href="{% url 'main:Home' %}" class="brand-logo">Self Care</a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-links"><li class="material-icons">menu</li></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#">Style</a></li>
+                    <li><a href="#">Beauty</a></li>
+                </ul>
+
+                <ul class="sidenav" id="mobile-links">
+                   <li><a href="#">Style</a></li>
+                    <li><a href=#l">Beauty</a></li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -31,20 +34,13 @@
 {% block body %}
 <main>
     <br/>
-    <div class="row">
-        <div class="col m12 l8">
-            <div class="card-panel">
-                {% for post in post %}
-                <h1 class="center">{{post.title}}</h1>
-                <p>{{post.date_published}}</p>
-                <h5>{{post.post}}</h5>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="col m4 l4">
-            <div class="card-panel">
-                <h5>This is a side card/panel</h5>
-            </div>
+    <div class="container">
+        <div class="card-panel">
+            {% for post in post %}
+            <p>{{post.post |safe}}</p>
+            <br/>
+            <p class="right-align">{{post.date_published}}</p>
+            {% endfor %}
         </div>
     </div>
 </main>
