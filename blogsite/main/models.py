@@ -37,6 +37,7 @@ class BlogPost(models.Model):
 
 
 class PostCard(models.Model):
+    category = models.ForeignKey(SubCategory, default=1, on_delete=models.SET_DEFAULT)
     post = models.OneToOneField(BlogPost, on_delete=models.CASCADE)
     pic = models.ImageField(upload_to='card_pics')
 
