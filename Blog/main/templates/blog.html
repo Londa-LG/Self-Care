@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+    <div class="container">
+      <div class="row">
+        <!-- Latest Posts -->
+        <main class="posts-listing col-lg-8"> 
+          <div class="container">
+            <div class="row">
+              <!-- post -->
+              {% for post in pagination %}
+              <div class="post col-xl-6">
+                <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+                <div class="post-details">
+                  <div class="post-meta d-flex justify-content-between">
+                    <div class="category">
+                    {% for cat in post.category.all %}
+                    <a href="#">{{ cat }}</a>
+                    {% endfor %}
+                    </div>
+                  </div>
+                  <a href="{{ post.get_absolute_url }}">
+                    <h3 class="h4">{{ post.title }}</h3>
+                  </a>
+                  <p class="text-muted">{{ post.post_description }}</p>
+                  <footer class="post-footer d-flex align-items-center">
+                    <div class="date"><i class="icon-clock"></i>{{ post.date_created | timesince }} ago</div>
+                    <div class="comments meta-last"><i class="icon-comment"></i>12</div>
+                  </footer>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination pagination-template d-flex justify-content-center">
+                {% if pagination.has_previous %}
+                <li class="page-item"><a href="?{{ page_var }}= {{ pagination.previous_page_number }}" class="page-link"><i class="fa fa-angle-left"></i></a></li>
+                {% endif %}
+                <li class="page-item"><a href="#" class="page-link active">{{ pagination.number }}</a></li>
+                {% if pagination.has_next %}
+                <li class="page-item"><a href="?{{ page_var }}= {{ pagination.next_page_number }}" class="page-link"> <i class="fa fa-angle-right"></i></a></li>
+                {% endif %}
+              </ul>
+            </nav>
+          </div>
+        </main>
+        <aside class="col-lg-4">
+          {% include 'include/aside.html' %}
+        </aside>
+      </div>
+    </div>
+{% endblock content %}

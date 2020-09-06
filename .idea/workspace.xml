@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="18824762-4692-4074-9d00-7945c1a107c3" name="Default Changelist" comment="" />
+    <list default="true" id="18824762-4692-4074-9d00-7945c1a107c3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/blogsite/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/blogsite/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/blogsite/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/blogsite/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/blogsite/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/migrations/0002_subcategory.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/migrations/0003_auto_20200827_1152.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/migrations/0004_postcard_category.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/static/main/maddi-bazzocco-TOZqUHD8L38-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/templates/main/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/templates/main/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/templates/main/post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/main/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/media/card_pics/bolge_blog_standard.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/media/card_pics/bolge_blog_standard_I0PNMHV.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogsite/media/card_pics/sb_dribbble_2x.jpg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +43,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1gXnuXZPa74CDtBaisaVFh3WG2h" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,6 +55,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -44,10 +77,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1598619237414">
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog" timestamp="1598722780661">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1598619237414" />
+    <state x="379" y="208" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1598722780661" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1598352659068">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

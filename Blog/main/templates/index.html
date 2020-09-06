@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+    <!-- Hero Section-->
+    <section style="background: url({% static 'img/annie-spratt-CQ2YvMAN7zE-unsplash.jpg' %}); background-size: cover; background-position: center center" class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h1>From skin care to Outfits. Everything you need to be the Sexiest woman in every room.</h1><a href="{% url 'main:blog' %}" class="hero-link">I want that!</a>
+          </div>
+      </div>
+    </section>
+    <!-- Intro Section-->
+    <section class="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="h3">Popular Blog Posts:</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="featured-posts no-padding-top">
+      <div class="container">
+        <!-- Post-->
+        {% for posts in featured %}
+        <div class="row d-flex align-items-stretch">
+          {% if not forloop.first and not forloop.last %}
+          <div class="image col-lg-5"><img src="{{ posts.thumbnail.url }}" alt="..."></div>
+          {% endif %}
+          <div class="text col-lg-7">
+            <div class="text-inner d-flex align-items-center">
+              <div class="content">
+                <header class="post-header">
+                  <div class="category">
+                    {% for cat in posts.category.all %}
+                    <a href="{{ cat.get_absolute_url }}">{{ cat }}</a>
+                    {% endfor %}
+                  </div>
+                  <a href="{{ posts.get_absolute_url }}"><h2 class="h4">{{posts.title}}</h2></a>
+                </header>
+                <p>{{posts.post_description}}</p>
+                <footer class="post-footer d-flex align-items-center">
+                  <div class="date"><i class="icon-clock"></i>{{ posts.date_created |timesince }} ago</div>
+                </footer>
+              </div>
+            </div>
+          </div>
+          {% if forloop.first or forloop.last %}
+          <div class="image col-lg-5"><img src="{{ posts.thumbnail.url }}" alt="..."></div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <!-- Divider Section-->
+    <section style="background: url({% static 'img/chelsea-shapouri-r40EYKVyutI-unsplash.jpg' %}); background-size: cover; background-position: center bottom;" class="divider">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h2>Look like a cover model while never actually being one</h2><a href="#" class="hero-link">Find out how</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Latest Posts -->
+    <section class="latest-posts"> 
+      <div class="container">
+        <header> 
+          <h2>Latest from the blog</h2>
+        </header>
+        <div class="row">
+          {% for post in latest %}
+          <div class="post col-md-4">
+            <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+            <div class="post-details">
+              <div class="post-meta d-flex justify-content-between">
+                <div class="date">{{ post.date_created | timesince }} ago</div>
+                {% for cat in post.category.all %}
+                <a class="category" href="{{ cat.get_absolute_url }}">{{ cat }}</a>
+                {% endfor %}
+              </div>
+              <a href="{{ post.get_absolute_url }}">
+                <h3 class="h4">{{ post.title }}</h3>
+              </a>
+              <p class="text-muted">{{ post.post_description }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter Section-->
+    <section class="newsletter no-padding-top">    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Subscribe to Newsletter</h2>
+            <br/>
+          </div>
+          <div class="col-md-8">
+            <div class="form-holder">
+              <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input type="email" name="email" id="email" placeholder="Type your email address">
+                  <button type="submit" class="submit">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}
