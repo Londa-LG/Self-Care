@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'tlgeo%f+r%$8vih#kaj2#-y)u*knjd=a6b&cn(=&t__lu2ed%&'
+SECRET_KEY = os.environ.get('Self-Care-git')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8000']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -40,10 +41,13 @@ INSTALLED_APPS = [
     'main',
     'marketing',
     'ckeditor',
+    'storages',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,5 +126,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:8000",
+    "http://storage.googleapi.com"
+]
+
+# Google bucket management
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'self-care-bucket'
+STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_FILE_OVERWRITE = False
