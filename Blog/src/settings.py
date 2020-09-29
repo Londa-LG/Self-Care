@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from google.oauth2 import service_account
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -132,6 +133,11 @@ STATIC_ROOT = BASE_DIR / 'static'
 DEFAULT_FILE_STORAGE= 'storages.backends.gcloud.GoogleCloudStorage'
 GS_PROJECT_ID = 'integral-tensor-288907'
 GS_BUCKET_NAME = 'self-care-bucket'
+STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 MEDIA_ROOT = "media/"
 UPLOAD_ROOT = 'media/uploads/'
 MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    "credentials.json"
+)
