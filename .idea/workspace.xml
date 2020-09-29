@@ -4,7 +4,7 @@
     <list default="true" id="18824762-4692-4074-9d00-7945c1a107c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/main/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/src/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +33,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Vacation-finder" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
