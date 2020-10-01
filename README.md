@@ -1,4 +1,4 @@
-#[Self-Care](https://self-care-blog.herokuapp.com)
+# [Self-Care](https://self-care-blog.herokuapp.com)
 
 # Description
 Self-Care is a beauty, makeup and fashion blog.
