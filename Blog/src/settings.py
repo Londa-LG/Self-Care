@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'marketing',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -128,14 +129,11 @@ STATIC_ROOT = BASE_DIR / 'static'
 # Google bucket management
 
 ###configuration for media file storing and reriving media file from gcloud
-#DEFAULT_FILE_STORAGE= 'storages.backends.gcloud.GoogleCloudStorage'
-#GS_PROJECT_ID = 'integral-tensor-288907'
-#GS_BUCKET_NAME = 'self-care-bucket'
-#STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-#MEDIA_ROOT = "media/"
-#UPLOAD_ROOT = 'media/uploads/'
-#MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = 'self-care-bucket'
+STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+MEDIA_ROOT = "media/"
+UPLOAD_ROOT = 'media/uploads/'
+MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
 
-#GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
-#    "credentials.json"
-#)
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file("credentials.json")
