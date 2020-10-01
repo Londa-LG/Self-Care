@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('Self-Care-git')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'marketing',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -125,15 +124,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-
-# Google bucket management
-
-###configuration for media file storing and reriving media file from gcloud
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-GS_BUCKET_NAME = 'self-care-bucket'
-STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
-MEDIA_ROOT = "media/"
-UPLOAD_ROOT = 'media/uploads/'
-MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_BUCKET_NAME)
-
-GS_CREDENTIALS = service_account.Credentials.from_service_account_file("credentials.json")
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
